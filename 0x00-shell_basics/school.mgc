@@ -1,2 +1,2 @@
 #!/bin/bash
-0 "SCHOOL" school.mgc
+0  string  SCHOOL !: mime money
