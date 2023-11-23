@@ -1,0 +1,1 @@
+# This Repository contains projects on how to generate ssh-rsa keys for secure network connection between different systems. Also concepts on Loops, condition and parsing was treated also using # Bash Scripting
