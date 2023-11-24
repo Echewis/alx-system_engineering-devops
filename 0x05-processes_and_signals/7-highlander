@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Implementing the SIGTERM signal
+
+function use_sigterm
+{
+	echo " I am invincible!!!"
+	exit 0
+}
+trap use_sigterm SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
