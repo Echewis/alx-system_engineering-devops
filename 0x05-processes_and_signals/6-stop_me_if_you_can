@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script will stops 4-to_infinit-and_beyond
+# without using kill or killall
+
+pkill  -f 4-to_infinity_and_beyond
