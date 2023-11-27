@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script will display Best School 10 times but will add Hi at the 9 time
+
+a=1
+while true
+do
+	echo "Best School"
+	a=$((a+1))
+	if [ $a -eq 9 ]
+	then
+		echo "Best School"
+		echo "Hi"
+	fi
+	if [ $a -ge 10 ]
+	then
+		break
+	fi
+done
