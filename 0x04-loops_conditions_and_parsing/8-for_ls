@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script will display the content in file
+
+for document in *
+do
+	if [ -f "$document" ]
+	then
+		echo "${document#*-}"
+	fi
+done
