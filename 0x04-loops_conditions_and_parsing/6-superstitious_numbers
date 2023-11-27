@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This script prints 1 - 20 
+# using case statement for conditions
+# in between the loop
+
+a=1
+while [ $a -le 20 ]
+do
+	case $a in
+		4)
+			echo $a
+			echo "bad luck for China"
+			;;
+		9)
+			echo $a
+			echo "bad luck for Japan"
+			;;
+		17)
+			echo $a
+			echo "bad luck for Italy"
+			;;
+		*)
+			echo $a
+	esac
+	a=$((a+1))
+done
