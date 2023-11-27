@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script will print 1 to 100
+# FizzBuzz when a number is a multiple of 3 and 5
+# Fizz when the number is a multiple of 3
+# buzz when a number is a multiple of 5
+N=1
+while [ $N -le 100 ]
+do
+	if [ $((N % 3)) -eq 0  ] && [ $((N % 5)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((N % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $(( N % 5)) == 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $N
+	fi
+	N=$((N+1))
+done
