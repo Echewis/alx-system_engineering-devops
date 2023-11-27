@@ -7,20 +7,9 @@ a=1
 while [ $a -le 20 ]
 do
 	case $a in
-		4)
-			echo $a
-			echo "bad luck for China"
-			;;
-		9)
-			echo $a
-			echo "bad luck for Japan"
-			;;
-		17)
-			echo $a
-			echo "bad luck for Italy"
-			;;
-		*)
-			echo $a
+		"4") echo "bad luck for China";;
+		"9") echo "bad luck for Japan";;
+		"17") echo "bad luck for Italy";;
 	esac
 	a=$((a+1))
 done
