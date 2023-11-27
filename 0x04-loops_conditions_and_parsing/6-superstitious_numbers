@@ -6,14 +6,15 @@
 a=1
 while [ $a -le 20 ]
 do
-	echo "$a"
 	case $a in
-		"4") echo "bad luck for China"
+		"4")	echo "bad luck for China"
 			;;
-		"9") echo "bad luck for Japan"
+		"9")	echo "bad luck for Japan"
 			;;
-		"17") echo "bad luck for Italy"
+		"17")	echo "bad luck for Italy"
+			;;
+		*)	echo $a
 			;;
 	esac
-	a=$((a+))
+	a=$((a+1))
 done
