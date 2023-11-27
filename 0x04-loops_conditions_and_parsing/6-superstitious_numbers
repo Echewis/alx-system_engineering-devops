@@ -12,5 +12,5 @@ do
 		"9") echo "bad luck for Japan";;
 		"17") echo "bad luck for Italy";;
 	esac
-	a=$((a+1))
+	((a++))
 done
