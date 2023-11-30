@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script will display the Listing socket wit pid with the program name
+
+netstat -lp
