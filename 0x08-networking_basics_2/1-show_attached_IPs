@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script will display all active
+# IPV4 IPs on the machines it's executed on
+
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
