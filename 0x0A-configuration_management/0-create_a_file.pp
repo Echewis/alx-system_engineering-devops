@@ -1,8 +1,8 @@
-# this will creat a puppet file
+# This is a puppet file
 file { '/tmp/school':
-	ensure => 'file',
-	owner => 'www-data',
-	group => 'www-data',
-	mode => '0744',
-	content => 'I love puppet',
+    ensure  => 'file,
+    owner   => 'www-data',
+    group   => 'www-data',
+    mode    => '0744',
+    content => 'I love puppet',
 }
