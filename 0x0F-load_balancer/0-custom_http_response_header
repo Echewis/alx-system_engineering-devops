@@ -9,17 +9,21 @@ sudo ufw allow 'Nginx HTTP'
 
 sudo mkdir -p /var/www/html
 
+# This line will change the permission to 766
 sudo chmod -R 755 /var/www
 
-#  This will create the index page
+# This will create the index page
 echo 'Hello World!' |sudo tee  /var/www/html/index.html
 
 echo "Ceci n'est pas une page" |sudo tee /var/www/html/404.html
 
+# This will create a webpage
 string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
+# This is a code to configure redirect for 404 error
 string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
+# This will restart the web server after uodate
 sudo service nginx restart
