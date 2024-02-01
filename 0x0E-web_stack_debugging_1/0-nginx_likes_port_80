@@ -1,0 +1,21 @@
+#!/bin/bash
+# This will Stop any process that is using port 80 on the host machine
+sudo kill $(sudo lsof -t -i :80)
+
+# ThisPull the latest Nginx image from Docker Hub
+docker pull nginx
+
+# Run a new Nginx container with port 80 exposed
+docker run --name docker-nginx -p 80:80 -d nginx
+
+# Get the container ID of the Nginx container
+CONTAINER_ID=$(docker ps -aqf "name=docker-nginx")
+
+# Add the CAP_NET_BIND_SERVICE capability to Nginx
+docker exec $CONTAINER_ID setcap cap_net_bind_service=+ep /usr/local/nginx/sbin/nginx
+
+# Edit the Nginx configuration file to listen on port 80 of all the server's active IPv4 IPs
+docker exec $CONTAINER_ID sed -i 's/listen 80 default_server;/listen *:80 default_server;/g' /etc/nginx/conf.d/default.conf
+
+# This will reload Nginx to apply the changes
+docker exec $CONTAINER_ID nginx -s reload
